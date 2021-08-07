@@ -14,6 +14,9 @@
                    res
                    (conj res data-head))))))))
 
+; simples solution found on the internet
+; (apply str (map first (partition-by identity "Leeeeeerrroyyy")))
+
 (= (apply str (remove-duplicate "Leeeeeerrroyyy")) "Leroy")
 
 (= (remove-duplicate [1 1 2 3 3 2 2 3]) '(1 2 3 2 3))
