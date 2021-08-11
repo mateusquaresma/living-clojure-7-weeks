@@ -31,12 +31,12 @@
 (= true (half-truth true true true false))
 
 ; Greatest Common Divisor
-(declare gcd)
+
 (defn gcd [a b]
   (cond
     (= a 0) b
     (= b 0) a
-    :else (gcd b (rem a b))))
+    :else (recur b (rem a b))))
 (= (gcd 2 4) 2)
 
 (= (gcd 10 5) 5)

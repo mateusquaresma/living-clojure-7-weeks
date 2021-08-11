@@ -1,4 +1,5 @@
-(ns living-clojure.week-2.day-4)
+(ns living-clojure.week-2.day-4
+  (:require [living-clojure.week-2.day-2 :as day-2]))
 
 ; Symmetric Difference
 (defn symmetric-difference [set-a set-b]
@@ -16,15 +17,9 @@
 
 ; Least Common Multiple
 
-(declare gcd)
-(defn gcd [a b]
-  (cond
-    (= a 0) b
-    (= b 0) a
-    :else (gcd b (rem a b))))
 
 (defn lcm [& args]
-  (/ (reduce * args) (reduce gcd args)))
+  (/ (reduce * args) (reduce day-2/gcd args)))
 
 (== (lcm 2 3) 6)
 
