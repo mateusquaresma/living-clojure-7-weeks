@@ -25,25 +25,3 @@
 (= (prime-gen 5) [2 3 5 7 11])
 
 (= (last (prime-gen 100)) 541)
-
-; Anagram finder
-
-(defn anagram? [a b]
-  (let [a-chars (set a)
-        b-chars (set b)]
-    (= a-chars b-chars)))
-
-(defn anagram [a b]
-  (when (anagram? a b) b))
-
-(defn anagram-finder [words]
-  (let [candidates (for [w words]
-                     (let [anagram-w (partial anagram w)]
-                       (map anagram-w words)))
-        non-nil-candidates (filter some? candidates)] ))
-
-(= (__ ["meat" "mat" "team" "mate" "eat"])
-   #{#{"meat" "team" "mate"}})
-
-(= (__ ["veer" "lake" "item" "kale" "mite" "ever"])
-   #{#{"veer" "ever"} #{"lake" "kale"} #{"mite" "item"}})
